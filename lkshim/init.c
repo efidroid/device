@@ -1,10 +1,11 @@
+#include <kernel/thread.h>
 #include <platform/gpio.h>
 
 #define TLMM_VOL_UP_BTN_GPIO    106
 #define TLMM_VOL_DOWN_BTN_GPIO  107
 
 /* Return 1 if vol_up pressed */
-int target_volume_up()
+int target_volume_up(void)
 {
     uint8_t status = 0;
 
@@ -20,7 +21,7 @@ int target_volume_up()
 }
 
 /* Return 1 if vol_down pressed */
-uint32_t target_volume_down()
+uint32_t target_volume_down(void)
 {
     uint8_t status = 0;
 
