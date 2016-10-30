@@ -1,0 +1,7 @@
+[
+  {
+    "repository": "bootloader_lk",
+    "target_path": "bootloader/lk/qcom/LA.BF64",
+    "branch": "qcom/LA.BF64"
+  }
+]
