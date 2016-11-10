@@ -1,8 +1,1 @@
-#include <dev/newkeys.h>
-
-// This should configure the camera button for use as a "back" button
-
-void uefiapi_platform_init_post(void)
-{
-        newkeys_add_source(&event_source);
-}
+// This should configure the camera button for use as a "back" button, but m1cha will implement an easy way for that :)
