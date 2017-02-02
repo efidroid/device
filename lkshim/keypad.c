@@ -87,4 +87,4 @@ void apq8064_keypad_init(void)
 
     apq8064_keypad_gpio_init();
     ssbi_gpio_keypad_init(&apq8064_pm8921_qwerty_keypad);
-} 
+}
