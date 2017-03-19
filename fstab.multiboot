@@ -1,5 +1,5 @@
-/dev/block/platform/msm_sdcc.1/by-name/system       /system         auto    defaults multiboot
-/dev/block/platform/msm_sdcc.1/by-name/cache        /cache          auto    defaults multiboot
-/dev/block/platform/msm_sdcc.1/by-name/userdata     /data           auto    defaults multiboot,esp=datamedia
-/dev/block/platform/msm_sdcc.1/by-name/boot         /boot           emmc    defaults multiboot,uefi,nvvars
-/dev/block/platform/msm_sdcc.1/by-name/recovery     /recovery       emmc    defaults uefi
+/dev/block/bootdevice/by-name/system       /system         auto    defaults multiboot
+/dev/block/bootdevice/by-name/cache        /cache          auto    defaults multiboot
+/dev/block/bootdevice/by-name/userdata     /data           auto    defaults multiboot,esp=datamedia
+/dev/block/bootdevice/by-name/boot         /boot           emmc    defaults multiboot,uefi,nvvars
+/dev/block/bootdevice/by-name/recovery     /recovery       emmc    defaults uefi
