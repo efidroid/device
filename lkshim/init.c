@@ -1,6 +1,5 @@
 #include <pm8x41.h>
 #include <platform/timer.h>
-#include <dev/newkeys.h>
 #include <err.h>
 
 /* Return 1 if vol_down pressed */
