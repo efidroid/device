@@ -1,0 +1,31 @@
+[Defines]
+  INF_VERSION       = 0x00010006
+  BASE_NAME         = LKLGpioTlmmIrqLib
+  FILE_GUID         = 9ebfbf92-9835-4c16-93e7-e909ac2b6b8d
+  MODULE_TYPE       = BASE
+  VERSION_STRING    = 0.1
+  LIBRARY_CLASS     = LKLGpioTlmmIrqLib
+  CONSTRUCTOR       = LKLGpioTlmmIrqLibConstructor
+
+[Sources]
+  LKLGpioTlmmIrqLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  EFIDroidPkg/Library/MicroLibC/MicroLibC.dec
+  EFIDroidLKLPkg/LKL/LKL.dec
+  EFIDroidLKLPkg/UEFIThreads/UEFIThreads.dec
+  EFIDroidPkg/EFIDroidPkg.dec
+  EFIDroidPkg/Qcom/Qcom.dec
+
+[Packages.ARM]
+  ArmPkg/ArmPkg.dec
+
+[LibraryClasses]
+  I2cQupLib
+
+[Protocols]
+  gQcomGpioTlmmInterruptProtocolGuid
+
+[Depex]
+  gQcomGpioTlmmInterruptProtocolGuid

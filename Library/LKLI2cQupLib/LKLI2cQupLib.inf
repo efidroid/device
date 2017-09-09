@@ -1,0 +1,22 @@
+[Defines]
+  INF_VERSION       = 0x00010006
+  BASE_NAME         = LKLI2cQupLib
+  FILE_GUID         = e5eaf2b2-010c-4c39-8630-9eb800b09a49
+  MODULE_TYPE       = BASE
+  VERSION_STRING    = 0.1
+  LIBRARY_CLASS     = LKLI2cQupLib
+
+[Sources]
+  LKLI2cQupLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  EFIDroidLKLPkg/LKL/LKL.dec
+  EFIDroidPkg/EFIDroidPkg.dec
+  EFIDroidPkg/Qcom/Qcom.dec
+
+[Packages.ARM]
+  ArmPkg/ArmPkg.dec
+
+[LibraryClasses]
+  I2cQupLib
