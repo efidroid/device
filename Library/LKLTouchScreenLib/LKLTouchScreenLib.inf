@@ -1,0 +1,26 @@
+[Defines]
+  INF_VERSION       = 0x00010006
+  BASE_NAME         = LKLTouchScreenLib
+  FILE_GUID         = 975e3eca-6fec-45c6-a337-bbfb7bbd6e02
+  MODULE_TYPE       = BASE
+  VERSION_STRING    = 0.1
+  LIBRARY_CLASS     = LKLTouchScreenLib
+  CONSTRUCTOR       = LKLTouchScreenLibConstructor
+
+[Sources]
+  LKLTouchScreenLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  EFIDroidPkg/Library/MicroLibC/MicroLibC.dec
+  EFIDroidLKLPkg/LKL/LKL.dec
+  EFIDroidPkg/EFIDroidPkg.dec
+  EFIDroidPkg/Qcom/Qcom.dec
+
+[Packages.ARM]
+  ArmPkg/ArmPkg.dec
+
+[LibraryClasses]
+  Pm8921Lib
+  GpioTlmmLib
+  TimerLib
