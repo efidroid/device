@@ -12,4 +12,6 @@ struct lkl_gpio_callback {
 int lkl_gpio_register_gpio(struct lkl_gpio_callback *cb, int irq, void *user);
 void lkl_gpio_remove_gpio(int offset);
 
+extern struct lkl_gpio_callback tlmm_gpio_callback;
+
 #endif

@@ -1,0 +1,8 @@
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = Common
+  PACKAGE_GUID                   = 2ada8aa5-c4dd-476b-bde1-37c7ede9006d
+  PACKAGE_VERSION                = 0.1
+
+[Includes]
+  lkl/include

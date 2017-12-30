@@ -1,0 +1,25 @@
+[Defines]
+  INF_VERSION       = 0x00010006
+  BASE_NAME         = LKLGpioTlmmCtrlLib
+  FILE_GUID         = 6f9d0d84-972d-4be5-892a-e156763607c1
+  MODULE_TYPE       = BASE
+  VERSION_STRING    = 0.1
+  LIBRARY_CLASS     = LKLGpioTlmmCtrlLib
+
+[Sources]
+  LKLGpioTlmmCtrlLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  EFIDroidPkg/Library/MicroLibC/MicroLibC.dec
+  EFIDroidLKLPkg/LKL/LKL.dec
+  EFIDroidLKLPkg/UEFIThreads/UEFIThreads.dec
+  EFIDroidPkg/EFIDroidPkg.dec
+  EFIDroidPkg/Qcom/Qcom.dec
+  EFIDroidDevices/generic/common/Common.dec
+
+[Packages.ARM]
+  ArmPkg/ArmPkg.dec
+
+[LibraryClasses]
+  GpioTlmmLib
