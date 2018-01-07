@@ -137,7 +137,7 @@ static int lkl_gpio_probe(struct platform_device *pdev)
 	return gpiochip_add_data(&lkl_gpiochip, NULL);
 }
 
-static struct platform_driver xtensa_gpio_driver = {
+static struct platform_driver lkl_gpio_driver = {
 	.driver		= {
 		.name		= "lkl-gpio",
 	},
@@ -152,7 +152,7 @@ static int __init lkl_gpio_init(void)
 	if (IS_ERR(pdev))
 		return PTR_ERR(pdev);
 
-	return platform_driver_register(&xtensa_gpio_driver);
+	return platform_driver_register(&lkl_gpio_driver);
 }
 arch_initcall(lkl_gpio_init);
 
