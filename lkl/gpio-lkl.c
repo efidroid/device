@@ -43,12 +43,18 @@ static int lkl_gpio_to_irq(struct gpio_chip *gc, unsigned offset)
 	if (offset >= ARRAY_SIZE(callbacks))
 		return -1;
 
+	if (!callbacks[offset].cb)
+		return -1;
+
 	return callbacks[offset].irq;
 }
 
 static int lkl_gpio_get_direction(struct gpio_chip *gc, unsigned offset)
 {
 	if (offset >= ARRAY_SIZE(callbacks))
+		return -1;
+
+	if (!callbacks[offset].cb)
 		return -1;
 
 	if (!callbacks[offset].cb->get_direction)
@@ -62,6 +68,9 @@ static int lkl_gpio_direction_input(struct gpio_chip *chip, unsigned offset)
 	if (offset >= ARRAY_SIZE(callbacks))
 		return -1;
 
+	if (!callbacks[offset].cb)
+		return -1;
+
 	if (!callbacks[offset].cb->direction_input)
 		return -1;
 
@@ -71,6 +80,9 @@ static int lkl_gpio_direction_input(struct gpio_chip *chip, unsigned offset)
 static int lkl_gpio_direction_output(struct gpio_chip *chip, unsigned offset, int value)
 {
 	if (offset >= ARRAY_SIZE(callbacks))
+		return -1;
+
+	if (!callbacks[offset].cb)
 		return -1;
 
 	if (!callbacks[offset].cb->direction_output)
@@ -84,6 +96,9 @@ static int lkl_gpio_get(struct gpio_chip *gc, unsigned offset)
 	if (offset >= ARRAY_SIZE(callbacks))
 		return -1;
 
+	if (!callbacks[offset].cb)
+		return -1;
+
 	if (!callbacks[offset].cb->get)
 		return -1;
 
@@ -94,6 +109,9 @@ static void lkl_gpio_set(struct gpio_chip *gc, unsigned offset,
 				    int value)
 {
 	if (offset >= ARRAY_SIZE(callbacks))
+		return;
+
+	if (!callbacks[offset].cb)
 		return;
 
 	if (!callbacks[offset].cb->set)
