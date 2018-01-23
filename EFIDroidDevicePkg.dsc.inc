@@ -7,7 +7,7 @@
   QcomTargetUartDmLib|EFIDroidDevicePkg/Library/QcomTargetUartDmLib/QcomTargetUartDmLib.inf
   QcomPlatformUartDmLib|EFIDroidDevicePkg/Library/QcomPlatformUartDmLib/QcomPlatformUartDmLib.inf
 
-  QcomPlatformI2cQupGsbiLib|EFIDroidDevicePkg/Library/QcomPlatformI2cQupGsbiLib/QcomPlatformI2cQupGsbiLib.inf
+  QcomPlatformI2cQupLib|EFIDroidDevicePkg/Library/QcomPlatformI2cQupLib/QcomPlatformI2cQupLib.inf
 
 [Components.common]
   EFIDroidPkg/Drivers/KeypadDxe/KeypadDxe.inf

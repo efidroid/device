@@ -33,12 +33,16 @@ VOID LibQcomPlatformUartDmGpioConfig(UINT8 id)
 	// enable UART switch
 	if(target_id == LINUX_MACHTYPE_8960_CDP)
 	{
-		gGpioTlmm->gpio_tlmm_config(MSM_BOOT_UART_SWITCH_GPIO_MITWOA, 0, GPIO_OUTPUT, GPIO_NO_PULL, GPIO_16MA, GPIO_ENABLE);
-		gGpioTlmm->gpio_set(MSM_BOOT_UART_SWITCH_GPIO_MITWOA, 2);
+		gGpioTlmm->SetFunction(MSM_BOOT_UART_SWITCH_GPIO_MITWOA, 0);
+		gGpioTlmm->SetDriveStrength(MSM_BOOT_UART_SWITCH_GPIO_MITWOA, 8);
+		gGpioTlmm->SetPull(MSM_BOOT_UART_SWITCH_GPIO_MITWOA, GPIO_PULL_UP);
+		gGpioTlmm->DirectionInput(MSM_BOOT_UART_SWITCH_GPIO_MITWOA);
 
 	} else if (target_id==LINUX_MACHTYPE_8064_MTP || target_id==LINUX_MACHTYPE_8064_MITWO) {
-		gGpioTlmm->gpio_tlmm_config(MSM_BOOT_UART_SWITCH_GPIO_MITWO, 0, GPIO_OUTPUT, GPIO_NO_PULL, GPIO_16MA, GPIO_ENABLE);
-		gGpioTlmm->gpio_set(MSM_BOOT_UART_SWITCH_GPIO_MITWO, 2);
+		gGpioTlmm->SetFunction(MSM_BOOT_UART_SWITCH_GPIO_MITWO, 0);
+		gGpioTlmm->SetDriveStrength(MSM_BOOT_UART_SWITCH_GPIO_MITWO, 8);
+		gGpioTlmm->SetPull(MSM_BOOT_UART_SWITCH_GPIO_MITWO, GPIO_PULL_UP);
+		gGpioTlmm->DirectionInput(MSM_BOOT_UART_SWITCH_GPIO_MITWO);
 	}
 
 	if (gBoard->board_platform_id() == MPQ8064 || gBoard->board_platform_id() == MSM8260AB)
@@ -47,11 +51,16 @@ VOID LibQcomPlatformUartDmGpioConfig(UINT8 id)
 
 		case GSBI_ID_5:
 			/* configure rx gpio */
-			gGpioTlmm->gpio_tlmm_config(23, 2, GPIO_INPUT, GPIO_NO_PULL,
-							 GPIO_8MA, GPIO_DISABLE);
+			gGpioTlmm->SetFunction(23, 2);
+			gGpioTlmm->SetDriveStrength(23, 8);
+			gGpioTlmm->SetPull(23, GPIO_PULL_NONE);
+			gGpioTlmm->DirectionInput(23);
+
 			/* configure tx gpio */
-			gGpioTlmm->gpio_tlmm_config(22, 2, GPIO_OUTPUT, GPIO_NO_PULL,
-							 GPIO_8MA, GPIO_DISABLE);
+			gGpioTlmm->SetFunction(22, 2);
+			gGpioTlmm->SetDriveStrength(22, 8);
+			gGpioTlmm->SetPull(22, GPIO_PULL_NONE);
+			gGpioTlmm->DirectionInput(23);
 			break;
 
 		default:
@@ -66,21 +75,31 @@ VOID LibQcomPlatformUartDmGpioConfig(UINT8 id)
 
 		case GSBI_ID_1:
 			/* configure rx gpio */
-			gGpioTlmm->gpio_tlmm_config(19, 1, GPIO_INPUT, GPIO_NO_PULL,
-							 GPIO_8MA, GPIO_DISABLE);
+			gGpioTlmm->SetFunction(19, 1);
+			gGpioTlmm->SetDriveStrength(19, 8);
+			gGpioTlmm->SetPull(19, GPIO_PULL_NONE);
+			gGpioTlmm->DirectionInput(19);
+
 			/* configure tx gpio */
-			gGpioTlmm->gpio_tlmm_config(18, 1, GPIO_OUTPUT, GPIO_NO_PULL,
-							 GPIO_8MA, GPIO_DISABLE);
+			gGpioTlmm->SetFunction(18, 1);
+			gGpioTlmm->SetDriveStrength(18, 8);
+			gGpioTlmm->SetPull(18, GPIO_PULL_NONE);
+			gGpioTlmm->DirectionInput(18);
 			break;
 
 
 		case GSBI_ID_7:
 			/* configure rx gpio */
-			gGpioTlmm->gpio_tlmm_config(83, 1, GPIO_INPUT, GPIO_NO_PULL,
-							 GPIO_8MA, GPIO_DISABLE);
+			gGpioTlmm->SetFunction(83, 1);
+			gGpioTlmm->SetDriveStrength(83, 8);
+			gGpioTlmm->SetPull(83, GPIO_PULL_NONE);
+			gGpioTlmm->DirectionInput(83);
+
 			/* configure tx gpio */
-			gGpioTlmm->gpio_tlmm_config(82, 2, GPIO_OUTPUT, GPIO_NO_PULL,
-							 GPIO_8MA, GPIO_DISABLE);
+			gGpioTlmm->SetFunction(82, 2);
+			gGpioTlmm->SetDriveStrength(82, 8);
+			gGpioTlmm->SetPull(82, GPIO_PULL_NONE);
+			gGpioTlmm->DirectionInput(82);
 			break;
 
 		default:
@@ -93,29 +112,44 @@ VOID LibQcomPlatformUartDmGpioConfig(UINT8 id)
 
 		case GSBI_ID_3:
 			/* configure rx gpio */
-			gGpioTlmm->gpio_tlmm_config(15, 1, GPIO_INPUT, GPIO_NO_PULL,
-							 GPIO_8MA, GPIO_DISABLE);
+			gGpioTlmm->SetFunction(15, 1);
+			gGpioTlmm->SetDriveStrength(15, 8);
+			gGpioTlmm->SetPull(15, GPIO_PULL_NONE);
+			gGpioTlmm->DirectionInput(15);
+
 			/* configure tx gpio */
-			gGpioTlmm->gpio_tlmm_config(14, 1, GPIO_OUTPUT, GPIO_NO_PULL,
-							 GPIO_8MA, GPIO_DISABLE);
+			gGpioTlmm->SetFunction(14, 1);
+			gGpioTlmm->SetDriveStrength(14, 8);
+			gGpioTlmm->SetPull(14, GPIO_PULL_NONE);
+			gGpioTlmm->DirectionInput(14);
 			break;
 
 		case GSBI_ID_5:
 			/* configure rx gpio */
-			gGpioTlmm->gpio_tlmm_config(23, 1, GPIO_INPUT, GPIO_NO_PULL,
-							 GPIO_8MA, GPIO_DISABLE);
+			gGpioTlmm->SetFunction(23, 1);
+			gGpioTlmm->SetDriveStrength(23, 8);
+			gGpioTlmm->SetPull(23, GPIO_PULL_NONE);
+			gGpioTlmm->DirectionInput(23);
+
 			/* configure tx gpio */
-			gGpioTlmm->gpio_tlmm_config(22, 1, GPIO_OUTPUT, GPIO_NO_PULL,
-							 GPIO_8MA, GPIO_DISABLE);
+			gGpioTlmm->SetFunction(22, 1);
+			gGpioTlmm->SetDriveStrength(22, 8);
+			gGpioTlmm->SetPull(22, GPIO_PULL_NONE);
+			gGpioTlmm->DirectionInput(22);
 			break;
 
 		case GSBI_ID_8:
 			/* configure rx gpio */
-			gGpioTlmm->gpio_tlmm_config(35, 1, GPIO_INPUT, GPIO_NO_PULL,
-							 GPIO_8MA, GPIO_DISABLE);
+			gGpioTlmm->SetFunction(35, 1);
+			gGpioTlmm->SetDriveStrength(35, 8);
+			gGpioTlmm->SetPull(35, GPIO_PULL_NONE);
+			gGpioTlmm->DirectionInput(35);
+
 			/* configure tx gpio */
-			gGpioTlmm->gpio_tlmm_config(34, 1, GPIO_OUTPUT, GPIO_NO_PULL,
-							 GPIO_8MA, GPIO_DISABLE);
+			gGpioTlmm->SetFunction(34, 1);
+			gGpioTlmm->SetDriveStrength(34, 8);
+			gGpioTlmm->SetPull(34, GPIO_PULL_NONE);
+			gGpioTlmm->DirectionInput(34);
 			break;
 
 		default:

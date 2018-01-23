@@ -87,7 +87,7 @@ int rmi_gpio_config(VOID *gpio_data, BOOLEAN configure)
 }
 
 int lkl_rmi_get_attn_status(VOID) {
-    return gGpioTlmm->gpio_status(RMI4_TS_I2C_INT_GPIO);
+    return gGpioTlmm->Get(RMI4_TS_I2C_INT_GPIO);
 }
 
 RETURN_STATUS
@@ -98,7 +98,10 @@ LKLTouchScreenLibConstructor (
 {
   EFI_STATUS Status;
 
-  gGpioTlmm->gpio_tlmm_config(RMI4_TS_I2C_INT_GPIO, 0, GPIO_INPUT, GPIO_PULL_UP, GPIO_8MA, GPIO_DISABLE);
+  gGpioTlmm->SetFunction(RMI4_TS_I2C_INT_GPIO, 0);
+  gGpioTlmm->SetDriveStrength(RMI4_TS_I2C_INT_GPIO, 8);
+  gGpioTlmm->SetPull(RMI4_TS_I2C_INT_GPIO, GPIO_PULL_UP);
+  gGpioTlmm->DirectionInput(RMI4_TS_I2C_INT_GPIO);
 
   Status = EFI_SUCCESS;
 
